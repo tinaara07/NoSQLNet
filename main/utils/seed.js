@@ -1,15 +1,18 @@
 const connection = require("../config/connection");
 const { User, Thought } = require("../models");
 
-connection.on("error", (err) => err);
+connection.on("error", (err) => {
+  console.error("Connection error:", err);
+});
 
 connection.once("open", async () => {
   console.log("connected");
+  
   // Delete the collections if they exist
   let thoughtCheck = await connection.db
     .listCollections({ name: "thoughts" })
     .toArray();
-  if (thoughtsCheck.length) {
+  if (thoughtCheck.length) {
     await connection.dropCollection("thoughts");
   }
 
@@ -20,14 +23,27 @@ connection.once("open", async () => {
     await connection.dropCollection("users");
   }
 
-  const users = [];
+  // Populate users and thoughts arrays with data
+  const users = [
+    // Example user objects
+    { username: "user1", email: "user1@example.com" },
+    { username: "user2", email: "user2@example.com" }
+  ];
+
+  const thoughts = [
+    // Example thought objects
+    { thoughtText: "This is a thought", username: "user1" },
+    { thoughtText: "This is another thought", username: "user2" }
+  ];
 
   await User.insertMany(users);
   await Thought.insertMany(thoughts);
 
-  // loop through the saved thoughts, for each thought we need to generate a thought response and insert the thought responses
   console.table(users);
   console.table(thoughts);
   console.info("Seeding complete!");
+
+  // Close the connection
+  await connection.close();
   process.exit(0);
 });
