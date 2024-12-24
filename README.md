@@ -1,9 +1,13 @@
 # NoSQLNet
 
 Project Overview
+
+
 This project is a social network API built for a web application where users can share their thoughts, react to friends' posts, and create a friend list. The API uses a NoSQL MongoDB database to handle large amounts of unstructured data. Express.js is used for routing, and Mongoose is used as the Object Data Modeling (ODM) tool to interact with MongoDB. This application is designed to demonstrate the ability to build and structure an API for a social media platform, meeting the requirements outlined below.
 
 Features
+
+
 Users can create and update their accounts.
 Users can share thoughts (posts).
 Users can react to thoughts of others (via reactions).
@@ -19,7 +23,8 @@ AS A social media startup
 I WANT an API for my social network that uses a NoSQL database
 SO THAT my website can handle large amounts of unstructured data
 
-Acceptance Criteria
+
+
 Server Startup:
 
 When the server is invoked, the Mongoose models are synced to the MongoDB database.
