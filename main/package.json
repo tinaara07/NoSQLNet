@@ -1,12 +1,12 @@
 {
-  "name": "28-Stu_Mini-Project",
-  "version": "1.0.1",
-  "description": "Mongoose back-end project - Develop",
-  "main": "index.js",
+  "name": "NoSQLNet",
+  "version": "1.0.0",
+  "description": "Social Network for thought-sharing, powered by Mongoose",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index",
+    "start": "node server",
+    "dev": "nodemon server",
     "seed": "node utils/seed"
   },
   "dependencies": {
