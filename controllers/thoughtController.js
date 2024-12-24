@@ -6,7 +6,7 @@ module.exports = {
       const thoughts = await Thought.find();
       res.json(thoughts);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   },
   async getSingleThought(req, res) {
@@ -21,7 +21,7 @@ module.exports = {
 
       res.json(thought);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   },
 
@@ -43,7 +43,7 @@ module.exports = {
       res.json("Created the thought");
     } catch (err) {
       console.log(err);
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   },
 
@@ -62,14 +62,14 @@ module.exports = {
       res.json(thought);
     } catch (err) {
       console.log(err);
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   },
 
   async deleteThought(req, res) {
     try {
-      const thought = await Thought.findOneAndRemove({
-        _id: req.params.thoughtId,
+      const thought = await Thought.findOneAndDelete({
+        _id: req.params.thoughtId
       });
 
       if (!thought) {
@@ -89,8 +89,10 @@ module.exports = {
       }
 
       res.json({ message: "Thought successfully deleted!" });
-    } catch (err) {
-      res.status(500).json(err);
+    } 
+    catch (err) {
+    console.log(err)
+      res.status(400).json(err);
     }
   },
 
@@ -108,7 +110,7 @@ module.exports = {
 
       res.json(thought);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   },
 
@@ -126,7 +128,7 @@ module.exports = {
 
       res.json(thought);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   },
   async addReaction(req, res) {
@@ -143,7 +145,7 @@ module.exports = {
 
       res.json(thought);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   },
   // Remove thought tag. This method finds the application based on ID. It then updates the tags array associated with the app in question by removing it's tagId from the tags array.
@@ -161,7 +163,7 @@ module.exports = {
 
       res.json(thought);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   },
 };
