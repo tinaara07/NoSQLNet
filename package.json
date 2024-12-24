@@ -1,0 +1,19 @@
+{
+    "name": "NoSQLNet",
+    "version": "1.0.0",
+    "description": "Social Network for thought-sharing, powered by Mongoose",
+    "main": "server.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "node server",
+      "dev": "nodemon server",
+      "seed": "node utils/seed"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^8.0.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.9"
+    }
+  }
