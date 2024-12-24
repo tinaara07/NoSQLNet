@@ -27,13 +27,15 @@ connection.once("open", async () => {
   const users = [
     // Example user objects
     { username: "user1", email: "user1@example.com" },
-    { username: "user2", email: "user2@example.com" }
+    { username: "user2", email: "user2@example.com" },
+    { username: "user3", email: "user3@example.com" }
   ];
 
   const thoughts = [
     // Example thought objects
-    { thoughtText: "This is a thought", username: "user1" },
-    { thoughtText: "This is another thought", username: "user2" }
+    { thoughtText: "This is first thought", username: "user1" },
+    { thoughtText: "This is second thought", username: "user2" },
+    { thoughtText: "This is third thought", username: "user3" }
   ];
 
   await User.insertMany(users);
