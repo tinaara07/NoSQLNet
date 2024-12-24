@@ -28,6 +28,6 @@ connection.once("open", async () => {
   // loop through the saved thoughts, for each thought we need to generate a thought response and insert the thought responses
   console.table(users);
   console.table(thoughts);
-  console.info("Seeding complete! 🌱");
+  console.info("Seeding complete!");
   process.exit(0);
 });
