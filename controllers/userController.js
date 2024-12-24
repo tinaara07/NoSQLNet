@@ -99,7 +99,7 @@ module.exports = {
     const user = await User.findById(req.params.userId);  
     if (!user) return res.status(404).json({ message: 'User not found' });
 
-    const updatedUser = await User.findByIdAndUpdate(
+    const updatedUser = await User.findOneAndDelete(
       req.params.userId,  
       { $pull: { friends: req.params.friendId } },  
       { new: true } 
