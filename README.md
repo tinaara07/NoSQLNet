@@ -89,3 +89,10 @@ You can view the functionality of the application in the following walkthrough v
 https://drive.google.com/file/d/1PMjfkcSHpb5MEAJ-IJNRsI6P0fs3UMhl/view
 
 https://drive.google.com/file/d/1MXXPwkd2HZtYWfaf3vQTZn8sfjv-DM6S/view
+
+
+Acknowledgment
+
+Thanks to Thomas White, Brock Altug, Alex Mena, Tala Awwad, Nancy Touma, Arman Tork, Maritza Diaz: my fantastic classmates with whom I worked on this project.
+
+Thanks to John Young and Zac Warner from edX/UC Berkeley Full-Stack Bootcamp.
