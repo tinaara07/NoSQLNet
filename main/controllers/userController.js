@@ -14,9 +14,7 @@ module.exports = {
   async getSingleUser(req, res) {
     try {
       const user = await User.findOne({ _id: req.params.userId })
-        // .populate(
-        //   "friends"
-        // );
+       
         .populate("thoughts");
 
       if (!user) {
@@ -26,7 +24,7 @@ module.exports = {
       res.json(user);
     } catch (err) {
       res.status(400).json(err);
-      // optional TODO: fine-tune the feedback to user
+     
     }
   },
   // create a new user
